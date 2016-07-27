@@ -1,0 +1,69 @@
+<div class="fullscreen">
+    <div class="card form" ng-controller="FormCtrl">
+        <h2>Formulier</h2>
+        <hr/>
+
+        <div class="small-12 column">
+
+            <div class="labels" ng-repeat="field in form.fields track by $index">
+                <div class="small-6 column">
+                    [[field.label]]
+                </div>
+                <div class="small-6 column">
+                    [[field.type]]
+                </div>
+            </div>
+        </div>
+
+        <div class="small-12 column">
+            <div class="row">
+                <div class="small-6 column">
+                    <input ng-model="fields.one.label" type="text" placeholder="label"/>
+                </div>
+                <div class="small-6 column">
+                    <select name="" id="" ng-model="fields.one.type">
+                        <option value="text">Text:</option>
+                        <option value="textarea">Textarea:</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" ng-show="fields.one">
+                <div class="small-6 column">
+                    <input ng-model="fields.two.label" type="text" placeholder="label"/>
+                </div>
+                <div class="small-6 column">
+                    <select name="" ng-model="fields.two.type">
+                        <option value="text">Text:</option>
+                        <option value="textarea">Textarea:</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" ng-show="fields.two">
+                <div class="small-6 column">
+                    <input ng-model="fields.three.label" type="text" placeholder="label"/>
+                </div>
+                <div class="small-6 column">
+                    <select name="" ng-model="fields.three.type">
+                        <option value="text">Text:</option>
+                        <option value="textarea">Textarea:</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" ng-show="fields.three">
+                <div class="small-6 column">
+                    <input ng-model="fields.four.label" type="text" placeholder="label"/>
+                </div>
+                <div class="small-6 column">
+                    <select name="" ng-model="fields.four.type">
+                        <option value="text">Text:</option>
+                        <option value="textarea">Textarea:</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="small-12 column">
+            <button ng-show="fields.one" type="submit" class="success" ng-click="updateForm(slot.item.id)">Opslaan</button>
+        </div>
+    </div>
+</div>

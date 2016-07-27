@@ -1,0 +1,59 @@
+<div class="heading">
+    <h2>De Stadsboerderij Harderwijk</h2>
+</div>
+<div ng-show="page">
+   <ul style="list-style: none;">
+     <li ng-repeat="(rkey, rvalue) in rows">
+       <div class="row">
+            <div class="slot-list" ng-repeat="(ckey, cvalue) in rvalue">
+                <div class="card [[slot.pageslots.moduleslot.module.name]] small-[[cvalue.cols]]">
+                    <div ng-init="slot = getSlot(rkey, ckey, page)">
+                        <div class="text-center">
+                            <div ng-show="slot.pageslots.moduleslot.module" class="controls">
+
+                                <div class="title">
+                                    [[slot.pageslots.moduleslot.module.name]]
+                                </div>
+
+                                <a class="hide" ng-click="disconnect(slot.pageslots.id)">ontkoppelen</a>
+                                <a href="" ui-sref="editSlot({pageId: slot.pageslots.page_id, slotId: slot.pageslots.id })">wijzigen</a>
+                            </div>
+                            <div ng-show="! slot.pageslots.moduleslot.module">
+                                <a href="" ui-sref="fillslot({pageId: slot.pageslots.page_id, slotId: slot.pageslots.id})">+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+       <hr/>
+       slot toevoegen <div class="right"><a ng-click="openSelectTemplate()">template wijzigen</a></div>
+       <select ng-show="selectTemplateOpen" ng-model="template" ng-change="selectTemplate(page, template)"
+               ng-options="template.name for template in pageTemplates"></select>
+
+   </ul>
+       <!--
+           <div class="small-6 column">
+               <div ng-if="slot.moduleslot.module.id">
+                   wijzigen/ontkoppelen
+                   <a href="" ui-sref="editSlot({slotId: slot.id })">wijzigen</a>
+               </div>
+               <div ng-if="! slot.moduleslot.module.id">
+                   <a href="" ui-sref="fillslot({pageId: slot.page_id, slotId: slot.id})">+</a>
+               </div>
+           </div>
+       </li>
+       -->
+</div>
+<!--
+    <div ng-if="todos == 0">
+        <ul ng-repeat="project in projects">
+            <li>
+                [[project.title]]
+                <input ng-model="newTodo.title" type="text" name="title" />
+                <button ng-click="addTodo(newTodo, project.id)">submit</button>
+            </li>
+        </ul>
+    </div>
+-->

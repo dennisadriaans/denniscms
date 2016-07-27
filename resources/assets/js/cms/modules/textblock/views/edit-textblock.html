@@ -1,0 +1,30 @@
+<div class="fullscreen">
+    <div class="card textblock" ng-controller="TextblockCtrl">
+        <h2>Tekstblok</h2>
+        <hr/>
+
+        <strong>Template:</strong>
+        <select ng-model="item" ng-change="selectTemplate(slot.moduleSlot.id, item)"
+                ng-options="template.title for template in slot.module.templates">
+               <option value="" style="color: #ccc;">Maak een keuze</option>
+        </select>
+
+        <form>
+              <label><strong>Titel:</strong></label>
+                <input ng-model="textblock.title" placeholder="[[ slot.item.title ]]" type="text"/>
+
+              <label><strong>Content:</strong></label>
+                <textarea class="ckeditor" ng-model="slot.item.content"
+                          type="text" name="editor1"></textarea>
+        </form>
+
+        <ul class="inline-list right">
+            <li>
+                <button type="submit" class="success" ng-click="updateTextblock(slot.item.id, slot.module.name)">Opslaan</button>
+            </li>
+            <li>
+                <button ng-click="goback()" style="background: none; color: #333;">Annuleren</button>
+            </li>
+        </ul>
+    </div>
+</div>

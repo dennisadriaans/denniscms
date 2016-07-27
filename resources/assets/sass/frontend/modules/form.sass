@@ -1,0 +1,61 @@
+.form
+  iframe
+    display: none
+  .card
+    width: 100%
+    padding: 10px 5px
+  h2
+    color: #393f5c
+    font-size: 22px
+    font-weight: 500
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif
+    &:first-letter
+      text-transform: capitalize
+  label
+    color: #464646
+    font-family: 'Droid Sans', sans-serif
+    font-weight: bolder
+    font-size: 11px
+  input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea
+    border-color: #d6dae5
+    height: 30px
+  button
+    width: calc(100% - 47px)
+    background: none
+    color: #707070
+    font-weight: lighter
+    font-size: 11px
+    border: 1px solid #d6dae5
+    &::after
+      content: '»'
+      width: 47px
+      height: 48px
+      position: absolute
+      left: 100%
+      padding-top: 16px
+      top: -1px
+      background-color: $secondary-color
+      border: 1px solid #d6dae5
+      text-align: center
+      color: $white
+
+@media#{$medium-up}
+  iframe
+    display: block
+  .form
+    &.contact
+      margin-top: -650px
+      .card.label
+        color: $black
+        margin: 15px 0
+
+
+@media #{$small-only}
+  iframe
+    display: none
+  .form
+    .card
+      &.label
+        display: none
+      &.contact
+        margin-top: 0

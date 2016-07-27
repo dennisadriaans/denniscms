@@ -1,0 +1,51 @@
+<div class="card category" ng-controller="CategoryCtrl">
+
+    <div class="small-12 column">
+        <h2>Category</h2>
+        <hr>
+    </div>
+
+    <div class="message fadeInDown animated">
+        [[ message ]]
+    </div>
+
+    <style>.message{
+        display: none;
+        position: fixed;
+        z-index: 100;
+        background: #333;
+        top: -3px;
+        padding: 12px 50px;
+        color: #fff;
+    }</style>
+
+    <div class="large-3 columns" style="border-right: 1px solid #ddd;">
+        <ul class="side-nav">
+            <li ng-repeat="item in slot.category.items" class="active">
+                <a class="hover-item" ng-click="selectItem(item)">[[ item.title ]]</a>
+                <hr/>
+            </li>
+        </ul>
+
+        <form>
+            <div class="small-12 column">
+                <input placeholder="" class="" type="text" ng-model="newItem.title"/>
+            </div>
+            <div class="small-12 column">
+                <button class="tiny small-12 column" ng-click="addItem(slot.category.id, slot.category.item_template)">Opslaan</button>
+            </div>
+        </form>
+
+        <!-- change module slot id -->
+        <strong>Template:</strong>
+        <select ng-model="item" ng-change="selectTemplate(item)"
+                ng-options="template.title for template in slot.module.templates">
+            <option value="" style="color: #ccc;">Maak een keuze</option>
+        </select>
+    </div>
+
+    <div class="small-9 column">
+        <div ng-include src="'cms/modules/category/views/edit-item.html'"></div>
+    </div>
+</div>
+<!-- <textarea class="ckeditor" ng-model="slot.item.content"type="text" name="editor1"></textarea> -->

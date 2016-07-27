@@ -1,0 +1,33 @@
+<div class="uploadManager" ng-controller="UploadCtrl">
+
+        <div class="small-12 column">
+            Afbeeldingen
+            <hr/>
+        </div>
+
+        <div class="images small-8 column">
+            <ul class="small-block-grid-6 grid">
+                <li ng-repeat="image in images | reverse" class="image">
+                    <!-- if action is update -->
+                    <span class="action-delete">
+                        <img src="/img/delete.svg" ng-click="removeImage(image.id)" alt="">
+                    </span>
+                    <img src="[[image.url]]" alt=""/>
+                </li>
+            </ul>
+            <hr/>
+        </div>
+
+    <div class="small-4 column">
+        <div class="file-select">
+            <input type="file"  ngf-select ng-model="files" multiple/>
+        </div>
+    </div>
+
+    <div class="small-4 column">
+        <label>TIP: Gebruik heldere bestandsnamen. Dit help het bestand makkelijker terug te vinden.</label>
+        <br>
+        <a class="tiny button" ng-click="upload(files)">Opslaan</a>
+    </div>
+
+</div>

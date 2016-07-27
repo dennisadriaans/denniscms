@@ -1,0 +1,89 @@
+<div class="item" ng-controller="ItemCtrl" ng-show="currentItem">
+
+    <button class="small-2 column tiny right" ng-click="updateProperty(currentItem)" style="margin-top: -75px;">save</button>
+
+   <div ng-repeat="property in currentItem.properties" class="property">
+        <div class="row">
+            <div class="small-2 column">
+                <label>[[property.label]]:</label>
+            </div>
+
+            <div class="small-10 column">
+
+                <div class="small-10 column" ng-if="property.type == 'image'">
+                    <img src="[[property.value]]" alt=""/>
+                </div>
+                <div class="small-2 column" ng-if="property.type == 'image'">
+                    <div class="row">
+                        <select style="background: #ddd;" ng-model="property.value" ng-options="image.url as image.title for image in images">
+                            <option style="color: #ccc;">Maak een keuze</option>
+                        </select>
+                        <button class="tiny" style="width: 100%; padding: 7px 12px;" ui-sref="mediamanager">Mediamanager</button>
+                    </div>
+                </div>
+
+                <div ng-if="property.type == 'textarea'">
+                    <div class="ckeditor" ckeditor="options" ng-model="property.value" id="[[property.id]]" ready="onReady()"></div>
+                </div>
+
+                <div ng-if="property.type == 'text'">
+                    <input ng-model="property.value" value="[[property.value]]" type="[[property.type]]" placeholder="[[property.value]]"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="small-12 left">
+        <div class="right">
+            <label><a ng-click="showPropertyCreator(currentItem)">Eigenschappen wijzigen</a></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-4 right">
+            <br/><br/><br/><br/><br/>
+            <button style="background: none; color: #333;"  class="small-6 column tiny" ng-click="deleteItem(currentItem)"> delete</button>
+            <button class="small-6 column tiny right" ng-click="updateProperty(currentItem)">save</button>
+        </div>
+    </div>
+</div>
+
+    <div ng-show="uploadManager" ng-include src="'cms/mediamanager/views/mediamanager.html'"></div>
+
+<!--
+    <form name="userForm" novalidate>
+
+        <div class="form-group" ng-class="{ 'has-error': userForm.name.$touched && userForm.name.$invalid }">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control"
+                   ng-model="main.name"
+                   ng-minlength="5"
+                   ng-maxlength="10"
+                   required>
+        </div>
+
+        <div class="help-block" ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+            <div ng-messages-include="/dacms/public/cms/partials/messages.html"></div>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid }">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control"
+                   ng-model="main.email"
+                   ng-minlength="5"
+                   ng-maxlength="20"
+                   required>
+
+        </div>
+        <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+            <div ng-messages-include="/dacms/public/cms/partials/messages.html"></div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+
+    </form>
+
+    -->

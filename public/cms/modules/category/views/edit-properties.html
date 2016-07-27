@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="small-12 column">
+
+        <ul ng-repeat="prop in props">
+            <li>
+                <div class="small-4 column">[[prop.label]]</div>
+                <div class="small-4 column">[[prop.type]]</div>
+                <div class="small-4 column"><a ng-click="deleteProp(prop, $index)">verwijderen</a></div>
+            </li>
+        </ul>
+
+         <form name="addProperties">
+            <div class="form-group small-6 column">
+                <input type="text" style="padding: 25px 0 10px 0;" placeholder="Property label" ng-model="newProp.label"/>
+            </div>
+            <div class="form-group small-6 column">
+                <select ng-model="newProp.type"
+                        ng-options="type.label for type in types" style="border: 1px solid #ededed;">
+                   <option value="" style="color: #ccc;">Maak een keuze</option>
+                        </select>
+            </div>
+            <a ng-click="addProperty(newProp)">Toevoegen</a>
+        </form>
+    </div>
+</div>

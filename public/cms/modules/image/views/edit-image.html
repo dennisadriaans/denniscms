@@ -1,0 +1,50 @@
+<div class="" ng-controller="ImageCtrl">
+    <div class="image card">
+        <h2>Image</h2>
+        <hr/>
+        <form>
+            <label>Template:</label>
+            <select ng-model="item" ng-change="selectTemplate(slot.moduleSlot.id, item)"
+                    ng-options="template.title for template in slot.module.templates">
+                <option value="" style="color: #ccc;">Maak een keuze</option>
+            </select>
+
+            <label>Afbeelding:</label>
+            <div class="small-10 column">
+                <img src="[[ slot.item.url ]]" class="right" alt="" width="350px;"/>
+            </div>
+
+            <div class="small-2 column right">
+                <select style="background: #ddd;" ng-model="slot.item" ng-options="image as image.title for image in images">
+                    <option style="color: #ccc;">Maak een keuze</option>
+                </select>
+                <button class="tiny right" ui-sref="mediamanager">Mediamanager</button>
+            </div>
+
+            <ul class="small-block-grid-4">
+                <li ng-repeat="item in slot.item.items">
+                    <img src="[[ item.url ]]" alt=""/>
+                </li>
+            </ul>
+            <hr/>
+
+            <div class="small-12 column">
+                <label>Omschrijving:</label>
+                <textarea ng-model="slot.item.description" placeholder="[[ slot.item.description ]]"></textarea>
+            </div>
+        </form>
+
+        <hr/>
+
+        <ul class="inline-list right">
+            <li>
+                <button type="submit" class="success" ng-click="updateImage(slot.item, slot.moduleSlot.id)">Opslaan</button>
+            </li>
+            <li>
+                <button ng-click="goback()" style="background: none; color: #333;">Annuleren</button>
+            </li>
+        </ul>
+    </div>
+
+</div>
+

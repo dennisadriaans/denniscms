@@ -1,0 +1,98 @@
+<div class="side-navigation">
+    <ul class="card">
+
+        <div class="admin-nav">
+            <img src="/img/logo.png" width="150px" alt=""/>
+        </div>
+
+        <select ng-model="selectedLanguage" ng-change="changeLang()">
+            <option value="nl" selected="selected">NL</option>
+            <option value="en" selected="selected">EN</option>
+            <option value="de" selected="selected">DE</option>
+        </select>
+
+        <li ng-repeat="menu in menus">
+            <div ng-repeat="page in menu.children" class="menu">  <!-- limit wegehalen!!-->
+                <div ng-show="page.language == selectedLanguage">
+                    <div class="head">
+                        <h2>Pagina's [[page.language]] [[pageId]]</h2>
+                    </div>
+                    <ul>
+                        <li ng-repeat="child in page.children" class="page-item">
+                            <div ng-if="child.id == pageId">
+                                [[pageId]]
+                            </div>
+                            <a href="[[child.id]]" ui-sref="dashboard.slots({page: child.id})">[[child.title]]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+        <div class="admin-links">
+            <hr/>
+            <a href="/admin/mediamanager">Mediamanager</a>
+        </div>
+
+        <div ng-show="addpage">
+            <form class="ng-pristine ng-valid">
+
+                <div class="small-12 column">
+                    <label>Menu:</label>
+                    <select ng-model="page.menuId" ng-options="menu.id as menu.language for menu in languages">
+                        <option="" value="" style="color: rgb(204, 204, 204);" class="ng-pristine ng-valid ng-touched" aria-invalid="false">
+                        <option value="?" selected="selected"></option><option label="nl" value="string:2">nl</option>
+                        <option label="de" value="string:12">de</option><option label="en" value="string:14">en</option>
+                    </select>
+                </div>
+
+                <div class="small-12 column">
+                    <label for="">Pagina titel:</label>
+                    <input type="text" ng-model="page.title" class="ng-pristine ng-untouched ng-valid" aria-invalid="false">
+                </div>
+
+                <div class="small-12 column">
+                    <label for="">Template id:</label>
+                    <input type="decimal" ng-model="page.template_id" class="ng-pristine ng-untouched ng-valid" aria-invalid="false">
+                </div>
+            </form>
+            <button class="small" ng-click="createPage()">Create page</button>
+        </div>
+    </ul>
+</div>
+
+        <!--
+
+                              <div class="small-12 column">
+            <div ng-show="addpage">
+                <form>
+
+                    <div class="small-12 column">
+                        <label>Menu:</label>
+                        <select ng-model="page.menuId"
+                                ng-options="menu.id as menu.language for menu in languages"
+                               <option value="" style="color: #ccc;">Maak een keuze</option>
+                        </select>
+                    </div>
+
+                    <div class="small-12 column">
+                        <label for="">Pagina titel:</label>
+                        <input type="text" ng-model="page.title"/>
+                    </div>
+
+                    <div class="small-12 column">
+                        <label for="">Template id:</label>
+                        <input type="decimal" ng-model="page.template_id"/>
+                    </div>
+                </form>
+
+                <button class="small" ng-click="createPage()">Create page</button>
+            </div>
+            <div class="small-12 column">
+                <div class="admin right">
+                    <button class="tiny" ng-click="showAddPage()">Menu toevoegen</button>
+                </div>
+            </div>
+        </div>
+
+                        -->

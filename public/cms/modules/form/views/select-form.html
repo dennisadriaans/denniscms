@@ -1,0 +1,19 @@
+<div ng-show="selectedModule" ng-controller="FillSlotCtrl">
+    <form>
+        <h4 style="text-transform: capitalize;">[[selectedModule]]</h4>
+        <h6>Selecteer bestaand:</h6>
+         <label>
+             <!-- select option -->
+               <select ng-model="item" ng-change="selectItem()"
+                   ng-options="item.title for item in items">
+                   <option value="" style="color: #ccc;">Maak een keuze</option>
+                </select>
+          </label>
+        <h6>Maak nieuw:</h6>
+        <input ng-model="nItem.title" type="text" placeholder="Titel" />
+    </form>
+    <button class="small-3 column button tiny left"><a  ui-sref="dashboard">terug</a></button>
+    <button class="small-3 column button tiny right"><a ng-click="save()">Opslaan</a></button>
+</div>
+
+        <!-- TODO remove inline styles -->

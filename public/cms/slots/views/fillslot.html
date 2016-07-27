@@ -1,0 +1,19 @@
+<br/>
+<br/>
+<br/>
+<div class="small-12 column">
+<hr/>
+
+    <div class="small-6 column" ng-show="selectedModule">
+        <div ng-include src="'cms/modules/' + selectedModule + '/views/select-' + selectedModule + '.html'"></div>
+    </div>
+
+    <div class="small-6 column">
+        <div>
+            <h4>Modules</h4>
+            <ul class="small-block-grid-2" ng-repeat="module in modules">
+                <li ng-click="selectModule(module)">[[ module.name ]]</li>
+            </ul>
+        </div>
+    </div>
+</div>
