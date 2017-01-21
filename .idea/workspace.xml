@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8846b3fb-ddec-4243-9213-8d03a4d4132d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/local_denniscms_nl_node_modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/local.denniscms.nl.iml" afterPath="$PROJECT_DIR$/.idea/local.denniscms.nl.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Page.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cms/slots/views/slot-list.html" afterPath="$PROJECT_DIR$/public/cms/slots/views/slot-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/cms/slots/controllers/EditSlotCtrl.js" afterPath="$PROJECT_DIR$/resources/assets/js/cms/slots/controllers/EditSlotCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/cms/slots/controllers/FillSlotCtrl.js" afterPath="$PROJECT_DIR$/resources/assets/js/cms/slots/controllers/FillSlotCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/cms/slots/views/slot-list.html" afterPath="$PROJECT_DIR$/resources/assets/js/cms/slots/views/slot-list.html" />
     </list>
     <ignored path="local.denniscms.nl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,11 +75,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slot-list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="slot-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/assets/js/cms/slots/views/slot-list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1062">
               <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -123,6 +127,7 @@
         <option value="$PROJECT_DIR$/resources/assets/js/cms/slots/controllers/EditSlotCtrl.js" />
         <option value="$PROJECT_DIR$/resources/assets/js/cms/slots/controllers/FillSlotCtrl.js" />
         <option value="$PROJECT_DIR$/resources/assets/js/cms/slots/views/slot-list.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -292,18 +297,18 @@
       <workItem from="1479155365056" duration="877000" />
       <workItem from="1479320877943" duration="355000" />
       <workItem from="1485003636450" duration="943000" />
-      <workItem from="1485013629199" duration="1425000" />
+      <workItem from="1485013629199" duration="1610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22925000" />
+    <option name="totallyTimeSpent" value="23110000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2625" y="24" width="2495" height="1416" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21478154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21478154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -346,13 +351,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Modules/category/Controllers/CommentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Modules/category/Controllers/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -720,6 +718,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1062">
           <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
