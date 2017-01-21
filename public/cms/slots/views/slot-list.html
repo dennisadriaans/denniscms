@@ -15,7 +15,7 @@
                                     [[slot.pageslots.moduleslot.module.name]]
                                 </div>
 
-                                <a class="hide" ng-click="disconnect(slot.pageslots.id)">ontkoppelen</a>
+                                <a ng-click="disconnect(slot.pageslots.id)">ontkoppelen</a>
                                 <a href="" ui-sref="editSlot({pageId: slot.pageslots.page_id, slotId: slot.pageslots.id })">wijzigen</a>
                             </div>
                             <div ng-show="! slot.pageslots.moduleslot.module">

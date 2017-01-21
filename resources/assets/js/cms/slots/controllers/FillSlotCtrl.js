@@ -9,26 +9,26 @@ app.controller("FillSlotCtrl", function($rootScope, $scope, $http, $state, $stat
     };
 
     $scope.selectExisting = function () {
-        $http.post('admin/edit/fillslot', {
+        var dataObject = {
             pageId: $state.params.pageId,
             slotId: $state.params.slotId,
             selectedId: $scope.item.id,
             module: $scope.selectedModuleId
-        }).success(function(data) {
+        };
+        $http.post('admin/edit/fillslot', dataObject).success(function(data) {
             $state.go('dashboard.slots', {page: $state.params.pageId});
         })
-    }
+    };
 
     $scope.save = function () {
-
-        $http.post('admin/edit/fillslot', {
+        var dataObject = {
             slotId: $state.params.slotId,
             module: $scope.selectedModule,
             moduleId: $scope.selectedModuleId,
             title: $scope.nItem.title
-        }).success(function(data) {
+        };
+        $http.post('admin/edit/fillslot', dataObject).success(function(data) {
             $state.go('dashboard.slots', {page: $state.params.pageId});
         });
-
     }
 });
